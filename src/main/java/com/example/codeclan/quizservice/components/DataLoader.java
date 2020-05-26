@@ -39,5 +39,8 @@ public class DataLoader implements ApplicationRunner {
 
         QuizQuestion question1 = new QuizQuestion("Geography","Capital of France?","Multiple Choice","Paris","Berlin", "New York", "Madrid",round1);
         quizQuestionRepository.save(question1);
+
+        QuizQuestion question2 = new QuizQuestion("Geography","Capital of China?","Multiple Choice","Beijing","Tokyo", "Taipei", "Seoul",round1);
+        quizQuestionRepository.save(question2);
     }
 }
