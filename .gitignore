@@ -50,3 +50,5 @@ build/
 out/
 target/
 .idea_modules/
+src/main/resources/static/
+src/main/resources/templates/
