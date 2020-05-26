@@ -14,6 +14,9 @@ public class Round {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
+    private String topic;
+
     @JsonBackReference
     @OneToMany(mappedBy = "round", fetch = FetchType.LAZY)
     private List<QuizQuestion> quizQuestions;
@@ -22,9 +25,13 @@ public class Round {
     @JoinColumn(name = "quiz_id")
     private Quiz quiz;
 
-    public Round(Quiz quiz) {
+    public Round(Quiz quiz, String topic) {
         this.quizQuestions = new ArrayList<QuizQuestion>();
         this.quiz = quiz;
+        this.topic = topic;
+    }
+
+    public Round() {
     }
 
     public Long getId() {
@@ -49,5 +56,13 @@ public class Round {
 
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 }

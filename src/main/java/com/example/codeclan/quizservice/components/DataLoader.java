@@ -31,10 +31,10 @@ public class DataLoader implements ApplicationRunner {
         Quiz geographyQuiz = new Quiz("Geography Quiz");
         quizRepository.save(geographyQuiz);
 
-        Round round1 = new Round(geographyQuiz);
+        Round round1 = new Round(geographyQuiz, "Landmarks");
         roundRepository.save(round1);
 
-        Round round2 = new Round(geographyQuiz);
+        Round round2 = new Round(geographyQuiz, "Capital Cities");
         roundRepository.save(round2);
 
         QuizQuestion question1 = new QuizQuestion("Geography","Capital of France?","Multiple Choice","Paris","Berlin", "New York", "Madrid",round1);
